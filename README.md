@@ -20,7 +20,7 @@ services:
   echo:
     image: mendhak/http-https-echo
   path-strip:
-    image: gghcr.io/seaglade/path-strip:latest
+    image: ghcr.io/seaglade/path-strip:latest
     environment:
       STRIP_PATH_PREFIX: a
       STRIP_PATH_TARGET: http://echo:8080
