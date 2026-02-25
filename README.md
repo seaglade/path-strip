@@ -4,10 +4,10 @@ This is a simple docker container built on `nginx:alpine` that generates an `ngi
 
 As an example, let's say you want `https://somewhere.example/a/*` to be proxied to `http://service:80/*`:
 
-| Environment Variable |    Correct Value    | Purpose                                                             |
-| :------------------: | :-----------------: | ------------------------------------------------------------------- |
-| `STRIP_PATH_PREFIX`  |         `a`         | Sets the subpath of the proxied endpoint. MUST NOT have a leading / |
-| `STRIP_PATH_TARGET`  | `http://service:80` | Sets the target for the proxy. MUST NOT have a trailing /           |
+| Environment Variable |    Correct Value    | Purpose                                                                         |
+| :------------------: | :-----------------: | ------------------------------------------------------------------------------- |
+| `STRIP_PATH_PREFIX`  |         `a`         | Sets the subpath of the proxied endpoint. MUST NOT have a leading or trailing / |
+| `STRIP_PATH_TARGET`  | `http://service:80` | Sets the target for the proxy. MUST NOT have a trailing /                       |
 
 Now, if you set your reverse proxy to hit `path-strip` on port 80, `https://somewhere.example/a/b` will be proxied to `http://service:80/b`.
 
